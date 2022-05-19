@@ -1,0 +1,84 @@
+
+.cb_pwork-our-works-area {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.cb_pwork-our-work-thumb {
+}
+.cb_pwork-our-work-content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #2B96CE;
+  text-align: center;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transform: scaleY(0);
+  height:100%;
+  width:100%;
+  transition:all .3s ease-in;
+}
+.cb_pwork-our-works {
+  position: relative;
+  width: calc(24% - 10px);
+  margin-bottom: 10px;
+  margin-right: 10px;
+}
+.cb_pwork-our-works:hover .cb_pwork-our-work-content{opacity: 1;transform: translateY(0);transform:scaleY(1);transition: all .3s ease-in-out;}
+.cb_pwork-our-work-icons a i {
+  background-color: #fff;
+  padding: 13px;
+  border-radius: 50%;
+  font-size: 13px;
+  color: #2B96CE;
+}
+.cb_pwork-our-work-icons {
+  gap: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.cb_pwork-our-work-title h2 {
+  color: #fff;
+  font-size: 16px;
+  font-family: "Montserrat", Sans-serif;
+  font-weight: 400;
+  margin-bottom: 5px;
+  margin-top: 10px;
+}
+.cb_pwork-our-work-title p a {
+  color: #fff;
+  font-family: "Montserrat", Sans-serif;
+  font-weight: 300;
+  font-size: 13px;
+}
+.cb_pworky-nav-menus{margin-bottom: 5px !important;}
+
+/*-------------------
+ * Tab Screen
+ * -----------------*/
+@media only screen and (max-width: 768px) { 
+	.cb_pwork-our-works {
+	  width: calc(49% - 10px);	 
+	  margin-right: 0px;
+}
+}
+
+
+/*-------------------
+ * Mobile Screen
+ * -----------------*/
+@media only screen and (max-width: 500px) {
+	.cb_pwork-our-works {	  
+	  width: calc(100% - 0px);	  
+	  margin-right: 0px;
+	}
+}
+
