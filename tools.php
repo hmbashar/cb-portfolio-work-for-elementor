@@ -6,8 +6,16 @@
  * Version: 1.0
  * Author: Md Abul Bashar
  * Author URI: https://www.facebook.com/hmbashar/
+ * Text Domain: cbpw
  */
 
+if ( ! defined( 'ABSPATH' ) ) {
+	exit; // Exit if accessed directly.
+}
+
+/**
+ * Enqueue scripts and styles.
+ */
 function cb_pwork_stylesheet_enque() {
     $cb_pwork_url = plugin_dir_url( __FILE__ );
     wp_enqueue_style( 'cb_pwork_stylesheet',  $cb_pwork_url . "/css/style.css");
@@ -74,6 +82,7 @@ function cb_pwork_custom_taxonomy() {
 add_action( 'init', 'cb_pwork_custom_taxonomy');
 
 
+
 function cb_pwork_our_works_loop($atts, $content = NULL) {
    
 	ob_start();
@@ -96,7 +105,7 @@ function cb_pwork_our_works_loop($atts, $content = NULL) {
 		<div class="cb_pwork-our-works">
 			<div class="cb_pwork-our-work-thumb">
 				<?php the_post_thumbnail('our-work');
-				    the_content();
+				    the_excerpt();
 				?>
 			</div>
 			<div class="cb_pwork-our-work-content">
@@ -135,3 +144,6 @@ function cb_pwork_our_works_loop($atts, $content = NULL) {
 	return ob_get_clean();
 }
 add_shortcode('cb-pwork-our-works', 'cb_pwork_our_works_loop');
+
+
+require_once( __DIR__ . '/elementor-addon/elementor-addon.php' );
