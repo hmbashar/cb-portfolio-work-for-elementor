@@ -6,13 +6,14 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 
 
-function register_hello_world_widget( $widgets_manager ) {
 
-	require_once( __DIR__ . '/widgets/hello-world-widget-1.php' );
-	require_once( __DIR__ . '/widgets/hello-world-widget-2.php' );
+function CB_Portfolio_Work_for_Elementor() {
 
-	$widgets_manager->register( new \Elementor_Hello_World_Widget_1() );
-	$widgets_manager->register( new \Elementor_Hello_World_Widget_2() );
+	// Load plugin file
+	require_once( __DIR__ . '/includes/plugin.php' );
+
+	// Run the plugin
+	\CB_Portfolio_Work\Plugin::instance();
 
 }
-add_action( 'elementor/widgets/register', 'register_hello_world_widget' );
+add_action( 'plugins_loaded', 'CB_Portfolio_Work_for_Elementor' );
