@@ -34,6 +34,7 @@ class Elementor_CB_Pwork extends \Elementor\Widget_Base {
             ]
         );
 
+        // How many posts show?
         $this->add_control(
             'cb_pwork_count',
             [
@@ -41,6 +42,22 @@ class Elementor_CB_Pwork extends \Elementor\Widget_Base {
                 'type' => \Elementor\Controls_Manager::NUMBER,
                 'default' => esc_html__( 8, 'cbpw' ),
                 'label_block' => true,
+            ]
+        );
+
+        // How many columns
+        $this->add_control(
+            'cb_pwork_column',
+            [
+                'label' => esc_html__( 'Column', 'cbpw' ),
+                'type' => \Elementor\Controls_Manager::SELECT,                
+                'label_block' => true,
+                'default' => 3,
+				'options' => [
+					'2'  => esc_html__( '2', 'cbpw' ),
+					'3' => esc_html__( '3', 'cbpw' ),
+					'4' => esc_html__( '4', 'cbpw' ),
+				],
             ]
         );
 
@@ -109,6 +126,9 @@ class Elementor_CB_Pwork extends \Elementor\Widget_Base {
                 <?php 
 
                     $post_count = $settings['cb_pwork_count']; // how many posts do you want to show?
+                    $cb_pwork_column = $settings['cb_pwork_column']; // how many column
+
+
                     $our_works = new \WP_Query(array(
                         'post_type'	=> 'our-works', 
                         'posts_per_page' => $post_count,
@@ -121,7 +141,7 @@ class Elementor_CB_Pwork extends \Elementor\Widget_Base {
                 ?>
                 <!-- Single Our Work -->	
                 
-                <div class="cb_pwork-our-works">
+                <div class="cb_pwork-our-works <?php echo esc_attr($cb_pwork_column);?>">
                     <div class="cb_pwork-our-work-thumb">
                         <?php the_post_thumbnail('our-work');
                             the_excerpt();
