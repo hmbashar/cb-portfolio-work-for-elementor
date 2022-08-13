@@ -1,7 +1,7 @@
 <?php
 
 /*
- * Plugin Name: CB Portfolio Work
+ * Plugin Name: CB Portfolio Work For Elementor
  * Description: This plugin for slowing your recent/profolio work
  * Version: 1.1
  * Author: Md Abul Bashar

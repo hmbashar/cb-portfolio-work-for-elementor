@@ -21,7 +21,7 @@ Show your works history as a portfolio on your website by using elementor widget
 
 = Is it available for the Elementor widget? =
 
-No, Isn't Available right now, but it will be adding in the furure.
+Yes, You can find the widget name of 'CB Portfolio Work'
 
 = What the shortcode for the plugin?=
 
@@ -32,12 +32,22 @@ Right Now don't have any attribute, but It will be added in the future update.
 
 == Screenshots ==
 
-1. screenshot-1.jpg
-1. screenshot-2.jpg
-1. screenshot-3.jpg
-1. screenshot-4.jpg
+1. Default View 1
+2. Default View 2
+3. Hover View
+4. Single Image full view with lightbox
+5. Two Column View
+6. Elementor Admin Panel
+7. Elementor Admin Panel 2
+8. Elementor Admin Panel 3
+9. Three Column View
+10. Dashboard Panel
 
 == Changelog ==
+
+
+= 1.1 =
+* Elementor Widget Added
 
 = 1.0 =
 * Released the first version.
