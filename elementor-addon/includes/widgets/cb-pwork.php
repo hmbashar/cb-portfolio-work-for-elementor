@@ -54,9 +54,9 @@ class Elementor_CB_Pwork extends \Elementor\Widget_Base {
                 'label_block' => true,
                 'default' => 'cb_pwork_two_column',
 				'options' => [
-					'cb_pwork_two_column'  => esc_html__( '2', 'cbpw' ),
-					'cb_pwork_three_column' => esc_html__( '3', 'cbpw' ),
-					'cb_pwork_four_column' => esc_html__( '4', 'cbpw' ),
+					'cb_pwork_two_column'  => esc_html__( '2 Columns', 'cbpw' ),
+					'cb_pwork_three_column' => esc_html__( '3 Columns', 'cbpw' ),
+					'cb_pwork_four_column' => esc_html__( '4 Columns', 'cbpw' ),
 				],
             ]
         );
@@ -79,7 +79,7 @@ class Elementor_CB_Pwork extends \Elementor\Widget_Base {
 			\Elementor\Group_Control_Border::get_type(),
 			[
 				'name' => 'border',
-				'label' => esc_html__( 'Border', 'plugin-name' ),
+				'label' => esc_html__( 'Border', 'cbpw' ),
 				'selector' => '{{WRAPPER}} .cb_pwork-our-works',
                 'devices' => [ 'desktop', 'tablet', 'mobile' ],
 			]
