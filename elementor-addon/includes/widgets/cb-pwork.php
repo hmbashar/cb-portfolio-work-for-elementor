@@ -52,11 +52,11 @@ class Elementor_CB_Pwork extends \Elementor\Widget_Base {
                 'label' => esc_html__( 'Column', 'cbpw' ),
                 'type' => \Elementor\Controls_Manager::SELECT,                
                 'label_block' => true,
-                'default' => 3,
+                'default' => 'cb_pwork_two_column',
 				'options' => [
-					'2'  => esc_html__( '2', 'cbpw' ),
-					'3' => esc_html__( '3', 'cbpw' ),
-					'4' => esc_html__( '4', 'cbpw' ),
+					'cb_pwork_two_column'  => esc_html__( '2', 'cbpw' ),
+					'cb_pwork_three_column' => esc_html__( '3', 'cbpw' ),
+					'cb_pwork_four_column' => esc_html__( '4', 'cbpw' ),
 				],
             ]
         );
@@ -64,31 +64,6 @@ class Elementor_CB_Pwork extends \Elementor\Widget_Base {
         $this->end_controls_section();
 
         // Content Tab End
-
-
-            // Content Tab Start
-
-            $this->start_controls_section(
-                'section_title2',
-                [
-                    'label' => esc_html__( 'Title 2', 'cbpw' ),
-                    'tab' => \Elementor\Controls_Manager::TAB_STYLE,
-                ]
-            );
-    
-            $this->add_control(
-                'title2',
-                [
-                    'label' => esc_html__( 'Title 2', 'cbpw' ),
-                    'type' => \Elementor\Controls_Manager::TEXT,
-                    'default' => esc_html__( 'Hello world 2', 'cbpw' ),
-                ]
-            );
-    
-            $this->end_controls_section();
-    
-            // Content Tab End
-
 
         // Style Tab Start
 
@@ -106,7 +81,7 @@ class Elementor_CB_Pwork extends \Elementor\Widget_Base {
                 'label' => esc_html__( 'Text Color', 'cbpw' ),
                 'type' => \Elementor\Controls_Manager::COLOR,
                 'selectors' => [
-                    '{{WRAPPER}} .hello-world' => 'color: {{VALUE}};',
+                    '{{WRAPPER}} .cb_pwork-our-work-title h2' => 'color: {{VALUE}};',
                 ],
             ]
         );
@@ -125,7 +100,7 @@ class Elementor_CB_Pwork extends \Elementor\Widget_Base {
                 
                 <?php 
 
-                    $post_count = $settings['cb_pwork_count']; // how many posts do you want to show?
+                    $post_count = $settings['cb_pwork_count'] ? $settings['cb_pwork_count'] : '10'; // how many posts do you want to show?
                     $cb_pwork_column = $settings['cb_pwork_column']; // how many column
 
 

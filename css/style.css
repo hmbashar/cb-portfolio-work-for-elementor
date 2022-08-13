@@ -27,9 +27,18 @@
 .cb_pwork-our-works {
   position: relative;
   width: calc(24% - 10px);
-  margin-bottom: 10px;
+  margin-bottom: 20px;
   margin-right: 10px;
+  margin-left: 10px;
+  border: 1px solid #464646;
+  padding: 15px;
+  border-radius: 3px;
 }
+.cb_pwork_three_column.cb_pwork-our-works{width: calc(31% - 1px);}
+.cb_pwork_two_column.cb_pwork-our-works{width: calc(49% - 15px);}
+.cb_pwork_four_column.cb_pwork-our-works{width: calc(24% - 17px);
+  margin-left: 10px;
+  margin-right: 10px;}
 .cb_pwork-our-works:hover .cb_pwork-our-work-content{opacity: 1;transform: translateY(0);transform:scaleY(1);transition: all .3s ease-in-out;}
 .cb_pwork-our-work-icons a i {
   background-color: #fff;
@@ -66,8 +75,9 @@
  * -----------------*/
 @media only screen and (max-width: 768px) { 
 	.cb_pwork-our-works {
-	  width: calc(49% - 10px);	 
-	  margin-right: 0px;
+	  width: calc(49% - 0px) !important;	 
+	  margin-right: 0px !important;
+    margin-left:0 !important;
 }
 }
 
@@ -77,8 +87,8 @@
  * -----------------*/
 @media only screen and (max-width: 500px) {
 	.cb_pwork-our-works {	  
-	  width: calc(100% - 0px);	  
-	  margin-right: 0px;
+	  width: calc(100% - 0px) !important;	  
+	  margin-right: 0px !important;
 	}
 }
 
