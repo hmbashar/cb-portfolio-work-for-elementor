@@ -45,6 +45,18 @@ class Elementor_CB_Pwork extends \Elementor\Widget_Base {
             ]
         );
 
+        // How many words show?
+        $this->add_control(
+            'cb_pwork_excerpt',
+            [
+                'label' => esc_html__( 'Word Excerpt', 'cbpw' ),
+                'type' => \Elementor\Controls_Manager::NUMBER,
+                'default' => esc_html__( 8, 'cbpw' ),
+                'label_block' => true,
+                'default' => 40,
+            ]
+        );
+
         // How many columns
         $this->add_control(
             'cb_pwork_column',
@@ -190,6 +202,7 @@ class Elementor_CB_Pwork extends \Elementor\Widget_Base {
 
                     $post_count = $settings['cb_pwork_count'] ? $settings['cb_pwork_count'] : '10'; // how many posts do you want to show?
                     $cb_pwork_column = $settings['cb_pwork_column']; // how many column
+                    $cb_pwork_excerpt = $settings['cb_pwork_excerpt'] ? $settings['cb_pwork_excerpt'] : 40; // content excerpt
 
 
                     $our_works = new \WP_Query(array(
@@ -207,7 +220,8 @@ class Elementor_CB_Pwork extends \Elementor\Widget_Base {
                 <div class="cb_pwork-our-works <?php echo esc_attr($cb_pwork_column);?>">
                     <div class="cb_pwork-our-work-thumb">
                         <?php the_post_thumbnail('our-work');
-                            the_excerpt();
+                            $contens = wp_trim_words(get_the_content(), $cb_pwork_excerpt, NULL);
+                            echo $contens;
                         ?>
                     </div>
                     <div class="cb_pwork-our-work-content">

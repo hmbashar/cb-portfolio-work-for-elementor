@@ -3,7 +3,7 @@
 /*
  * Plugin Name: CB Portfolio Work For Elementor
  * Description: This plugin for slowing your recent/profolio work
- * Version: 1.1
+ * Version: 1.2
  * Author: Md Abul Bashar
  * Author URI: https://www.facebook.com/hmbashar/
  * Text Domain: cbpw
